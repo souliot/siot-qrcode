@@ -1,4 +1,4 @@
-module github.com/souliot/qrcode
+module github.com/souliot/siot-qrcode
 
 go 1.15
 
