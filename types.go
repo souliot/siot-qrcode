@@ -47,6 +47,9 @@ type IQrCode interface {
 
 	DisableBorder(bool)
 
+	// 返回生成的二维码图片字节数组
+	Bytes(size int) ([]byte, error)
+
 	// 返回生成的二维码图片
 	Image(size int) (image.Image, error)
 

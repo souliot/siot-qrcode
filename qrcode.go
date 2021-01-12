@@ -236,7 +236,7 @@ func (q *QrCode) Image(size int) (image.Image, error) {
 func (q *QrCode) Write(size int, out io.Writer) error {
 	var p []byte
 
-	p, err := q.PNG(size)
+	p, err := q.Bytes(size)
 
 	if err != nil {
 		return err
@@ -249,7 +249,7 @@ func (q *QrCode) Write(size int, out io.Writer) error {
 func (q *QrCode) WriteFile(size int, filename string) error {
 	var p []byte
 
-	p, err := q.PNG(size)
+	p, err := q.Bytes(size)
 
 	if err != nil {
 		return err
@@ -259,7 +259,7 @@ func (q *QrCode) WriteFile(size int, filename string) error {
 }
 
 // 返回 png 二维码图片
-func (q *QrCode) PNG(size int) ([]byte, error) {
+func (q *QrCode) Bytes(size int) ([]byte, error) {
 	img, err := q.Image(size)
 	if err != nil {
 		return nil, err
